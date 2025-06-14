@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wood Farm Livery</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --bg-color: #1e1e1e;
+      --text-color: #f0f0f0;
+      --accent-color: #ff6600;
+      --card-bg: #2d2d2d;
+      --btn-radius: 8px;
+    }
+
+    body.light-mode {
+      --bg-color: #ffffff;
+      --text-color: #1e1e1e;
+      --card-bg: #f4f4f4;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .dark-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 999;
+      background: none;
+      border: 2px solid var(--accent-color);
+      color: var(--accent-color);
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: var(--btn-radius);
+      font-weight: bold;
+    }
+
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: var(--card-bg);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--accent-color);
+    }
+
+    .nav-icons i {
+      margin-left: 15px;
+      cursor: pointer;
+    }
+
+    .nav-menu {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      background-color: var(--card-bg);
+      padding: 12px 0;
+    }
+
+    .nav-menu a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: var(--btn-radius);
+    }
+
+    .nav-menu a:hover {
+      background-color: var(--accent-color);
+      color: #fff;
+    }
+
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin: 20px auto;
+      max-width: 500px;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: var(--btn-radius);
+      background-color: var(--card-bg);
+      color: var(--text-color);
+    }
+
+    .cta-button {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .cta-button button {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: var(--btn-radius);
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .tabs button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: var(--btn-radius);
+      background-color: var(--card-bg);
+      color: var(--text-color);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .tabs .active,
+    .tabs button:hover {
+      background-color: var(--accent-color);
+      color: #fff;
+    }
+
+    .icon-section {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    .tile {
+      text-align: center;
+    }
+
+    .tile i {
+      font-size: 2rem;
+      margin-bottom: 8px;
+      color: var(--accent-color);
+    }
+
+    .map-container {
+      margin: 40px auto;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(to right, #2d2d2d, #1e1e1e);
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .hero .btn {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: var(--btn-radius);
+    }
+
+    .about-teaser,
+    .services-teaser {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .service-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .service-list li {
+      margin: 5px 0;
+    }
+
+    .btn {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: var(--btn-radius);
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .newsletter-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+      display: none;
+      text-align: center;
+    }
+
+    .newsletter-popup.active {
+      display: block;
+    }
+
+    .newsletter-popup input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: var(--btn-radius);
+    }
+
+    .newsletter-popup button {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: var(--btn-radius);
+      cursor: pointer;
+    }
+
+    .cookie-banner {
+      background-color: var(--card-bg);
+      color: var(--text-color);
+      padding: 10px 20px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .cookie-banner button {
+      background: none;
+      color: var(--accent-color);
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .app-banner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      background-color: var(--accent-color);
+      color: white;
+      padding: 10px 0;
+    }
+
+    .app-banner button {
+      background: white;
+      color: var(--accent-color);
+      border: none;
+      padding: 5px 10px;
+      border-radius: var(--btn-radius);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button class="dark-toggle" onclick="toggleDarkMode()">Toggle Mode</button>
+
+  <div class="app-banner">
+    <span>Wood Farm App</span>
+    <button>Install App</button>
+  </div>
+
+  <header class="main-header">
+    <div class="logo">WOOD FARM LIVERY</div>
+    <nav class="nav-icons">
+      <i class="fas fa-bars"></i>
+      <i class="fas fa-user"></i>
+    </nav>
+  </header>
+
+  <nav class="nav-menu">
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="our horses.html">Our Horses</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+     <a href="videos.html">Videos</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search services or info...">
+    <i class="fas fa-search"></i>
+  </div>
+
+  <div class="cta-button">
+    <button onclick="showNewsletter()">Book a Visit</button>
+  </div>
+
+  <div class="tabs">
+    <button class="active">Full Livery</button>
+    <button>Part Livery</button>
+    <button>Riding Lessons</button>
+  </div>
+
+  <div class="icon-section">
+    <div class="tile">
+      <i class="fas fa-horse"></i>
+      <p>Stabling</p>
+    </div>
+    <div class="tile">
+      <i class="fas fa-helmet-safety"></i>
+      <p>Training</p>
+    </div>
+    <div class="tile">
+      <i class="fas fa-people-group"></i>
+      <p>Group Rides</p>
+    </div>
+  </div>
+
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2512.665035070801!2d-1.8262146843235328!3d52.47718607980678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870bc235a730abb%3A0xd57a0dd4048c0c15!2sWood%20Farm!5e0!3m2!1sen!2suk!4v1685156880632!5m2!1sen!2suk" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  <!-- Swiper Carousel -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="0a54c276-139c-4204-aefe-73b8d85ef108.jpg".jpg" alt="Horse 1" /></div>
+    <div class="swiper-slide"><img src="67e9edc8-a825-4087-8647-9b9afa890a33.jpg" alt="Horse 2" /></div>
+    <div class="swiper-slide"><img src="a2266313-9742-4efe-849f-76db6dbcb0b2.jpg" alt="Horse 3" /></div>
+  </div>
+  <!-- Optional navigation buttons -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Welcome to WOOD FARM LIVERY</h2>
+      <p>Where tradition meets elegance. Ride with passion.</p>
+      <a href="our    horses.html" class="btn">Explore Our Horses</a>
+    </div>
+  </section>
+
+  <section class="about-teaser">
+    <div class="container">
+      <h2>Our Story</h2>
+      <p>WOOD FARM LIVERY is a sanctuary for horses and riders alike. We are passionate about building a community through equine care, riding education, and unforgettable experiences.</p>
+      <a href="about.html" class="btn">Learn More</a>
+    </div>
+  </section>
+
+  <section class="services-teaser">
+    <div class="container">
+      <h2>Our Services</h2>
+      <ul class="service-list">
+        <li>Boarding</li>
+        <li>Training</li>
+        <li>Riding Lessons</li>
+        <li>Trail Rides</li>
+      </ul>
+      <a href="services.html" class="btn">View All Services</a>
+    </div>
+  </section>
+
+  <div id="newsletter" class="newsletter-popup">
+    <h3>Join Our Newsletter</h3>
+    <input type="email" placeholder="Your email address" />
+    <button onclick="hideNewsletter()">Subscribe</button>
+  </div>
+
+  <div class="cookie-banner">
+    <p>This website uses cookies to improve your experience. <a href="#">Privacy Policy</a></p>
+    <button class="close-cookie">×</button>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("light-mode");
+    }
+
+    function showNewsletter() {
+      document.getElementById("newsletter").classList.add("active");
+    }
+
+    function hideNewsletter() {
+      document.getElementById("newsletter").classList.remove("active");
+    }
+
+    document.querySelector(".close-cookie").onclick = () => {
+      document.querySelector(".cookie-banner").style.display = "none";
+    };
+  </script>
+  <!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Swiper Initialization -->
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-about">
+      <h3>About Us</h3>
+      <p>WOOD FARM LIVERY - Excellence in horse care and training.</p>
+    </div>
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="breed.html">Breeds</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <p>Email: </p>
+      <p>Phone:+44794394650 </p>
+      <p>Address: </p>
+    </div>
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 WOOD FARM LIVERY. All rights reserved.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Wood Farm Livery</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .main-header {
+      padding: 20px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .nav-menu {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background-color: var(--card-bg);
+      padding: 10px 0;
+    }
+    .nav-menu a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .nav-menu a:hover {
+      color: var(--accent-color);
+    }
+    .about-section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .about-section h2 {
+      color: var(--accent-color);
+    }
+    .about-section p {
+      line-height: 1.6;
+    }
+    .staff-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    .staff-member {
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      text-align: center;
+      padding: 15px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .staff-member img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .staff-member h3 {
+      margin: 10px 0 5px;
+      color: var(--accent-color);
+    }
+    .staff-member p {
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-header">Wood Farm Livery</div>
+
+  <nav class="nav-menu">
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+     <a href="our horses.html">Our Horses</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+     <a href="videos.html">Videos</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="about-section">
+    <h2>About Us</h2>
+    <p>
+      Welcome to Wood Farm Livery — a premier destination for horse lovers and equestrian services. Nestled in the heart of the countryside, our farm offers full and part livery, professional riding lessons, and personalized care for every horse.
+    </p>
+    <p>
+      With a passionate and experienced team, we focus on creating a safe, clean, and inspiring environment for both riders and horses. Whether you're a beginner or a competitive rider, we tailor services to your needs.
+    </p>
+    <p>
+      Discover why Wood Farm Livery is trusted by riders across the region.
+    </p>
+  </section>
+
+  <section class="staff-section">
+    <div class="staff-member">
+      <img src="images/staff1.jpg" alt="Jane - Stable Manager">
+      <h3>Jane Thompson</h3>
+      <p>Stable Manager with 15 years of experience in equine care and facility management.</p>
+    </div>
+    <div class="staff-member">
+      <img src="images/staff2.jpg" alt="Mark - Riding Instructor">
+      <h3>Mark Ellis</h3>
+      <p>Certified riding instructor specializing in show jumping and beginner rider training.</p>
+    </div>
+    <div class="staff-member">
+      <img src="images/staff3.jpg" alt="Lily - Groomer">
+      <h3>Lily Roberts</h3>
+      <p>Expert groomer known for gentle handling and top-tier grooming standards.</p>
+    </div>
+  </section>
+</body>
+</html>

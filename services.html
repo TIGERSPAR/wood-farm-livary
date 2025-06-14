@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Wood Farm Livery</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .main-header {
+      padding: 20px;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .nav-menu {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background-color: var(--card-bg);
+      padding: 10px 0;
+    }
+    .nav-menu a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .nav-menu a:hover {
+      color: var(--accent-color);
+    }
+    .services-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    .service {
+      background-color: var(--card-bg);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .service-icon {
+      font-size: 2rem;
+      color: var(--accent-color);
+      flex-shrink: 0;
+    }
+    .service-content h3 {
+      margin: 0 0 10px;
+      color: var(--accent-color);
+    }
+    .service-content p {
+      line-height: 1.6;
+    }
+    .pricing-table {
+      margin-top: 40px;
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .pricing-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .pricing-table th, .pricing-table td {
+      padding: 12px;
+      border-bottom: 1px solid #ccc;
+      text-align: left;
+    }
+    .cta-button {
+      display: block;
+      width: fit-content;
+      margin: 30px auto 0;
+      padding: 12px 24px;
+      background-color: var(--accent-color);
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-header">Wood Farm Livery</div>
+
+  <nav class="nav-menu">
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+     <a href="our horses.html">Our Horses</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+     <a href="videos.html">Videos</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="services-section">
+    <div class="service">
+      <div class="service-icon"><i class="fas fa-horse-head"></i></div>
+      <div class="service-content">
+        <h3>Full Livery</h3>
+        <p>Comprehensive daily care including feeding, turnout, mucking out, grooming, and tack cleaning. Ideal for busy owners looking for total support.</p>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="service-icon"><i class="fas fa-apple-alt"></i></div>
+      <div class="service-content">
+        <h3>Part Livery</h3>
+        <p>Flexible care plan offering daily essentials while allowing you to maintain a hands-on role in your horse’s care.</p>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="service-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+      <div class="service-content">
+        <h3>Riding Lessons</h3>
+        <p>Tailored riding instruction for all levels — from beginners to competitive riders. Private and group lessons available.</p>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="service-icon"><i class="fas fa-dumbbell"></i></div>
+      <div class="service-content">
+        <h3>Horse Training</h3>
+        <p>Professional training programs customized for young, green, or problem horses to improve performance and manners.</p>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
+      <div class="service-content">
+        <h3>Rehabilitation & Rest</h3>
+        <p>Safe, monitored environment for horses in recovery or requiring rest, with access to top-quality veterinary care and facilities.</p>
+      </div>
+    </div>
+
+    <div class="pricing-table">
+      <h3>Service Pricing</h3>
+      <table>
+        <tr><th>Service</th><th>Price (per month)</th></tr>
+        <tr><td>Full Livery</td><td>$750</td></tr>
+        <tr><td>Part Livery</td><td>$500</td></tr>
+        <tr><td>Riding Lessons</td><td>$40 per lesson</td></tr>
+        <tr><td>Horse Training</td><td>$600</td></tr>
+        <tr><td>Rehabilitation & Rest</td><td>$450</td></tr>
+      </table>
+    </div>
+
+    <a href="contact.html" class="cta-button">Book a Service</a>
+  </section>
+</body>
+</html>
